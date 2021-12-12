@@ -1,0 +1,16 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+}
+.bg-danger{
+    border-radius: 5px;
+    border: 2px groove black;
+}
+.evenStyle{
+    background-color: rgb(200, 228, 197);
+}
+.oddStyle{
+    background-color: rgb(195, 195, 238);
+}

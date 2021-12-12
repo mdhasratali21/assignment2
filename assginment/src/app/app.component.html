@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row mt-2">
+    <div class="col-2 p-2 routerCall">
+      <!--Home routerLink-->
+      <a routerLink="home" class="p-2"> <button class="btn btn-outline-primary form-control m-1" style="border-radius: 5px;">
+        <b>Home</b>
+        </button></a>
+      <!--Add Contact routerLink-->
+      <a routerLink="form" class="p-2"> <button class="btn btn-outline-primary form-control m-1" style="border-radius: 5px;">
+        <b>Add Contact</b>
+        </button></a>
+    </div>
+    <div class="col-10">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

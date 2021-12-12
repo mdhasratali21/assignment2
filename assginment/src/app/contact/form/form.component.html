@@ -1,0 +1,50 @@
+<div class="w-50 container">
+    <!--Add Contact Heading-->
+    <div class="oddStyle mt-3">
+        <h2 class="text-white bg-danger text-center p-2">User Details</h2>
+    </div>
+    <!--Add Contact, User Details Form-->
+    <form #frmRegister="ngForm" (submit)="RegisterData(frmRegister.value)">
+        <div>
+            <!--First Name Input-->
+            <div class="mt-3">
+                <label class="form-label">First Name<sup>*</sup></label>
+                <input type="text" required minlength="4" name="first_name" ngModel #first_name="ngModel" class="form-control" placeholder="First Name">
+                <div *ngIf="first_name.touched && first_name.invalid" class="text-danger">
+                    <div *ngIf="first_name.errors?.['required']">Fisrt Name Required</div>
+                    <div *ngIf="first_name.errors?.['minlength']">Too Short... Minimum 4 Characters</div>
+                </div>
+            </div>
+             <!--Last Name Input-->
+            <div class="mt-4">
+                <label class="form-label">Last Name<sup>*</sup></label>
+                <input type="text" required minlength="3" name="last_name" ngModel #last_name="ngModel" class="form-control" placeholder="Last Name">
+                <div *ngIf="last_name.touched && last_name.invalid" class="text-danger">
+                    <div *ngIf="last_name.errors?.['required']">Last Name Required</div>
+                    <div *ngIf="last_name.errors?.['minlength']">Too Short... Minimum 3 Characters</div>
+                </div>
+            </div>
+             <!--Email Input-->
+            <div class="mt-4">
+                <label class="form-label">Email<sup>*</sup></label>
+                <input type="email" required name="email" ngModel #email="ngModel" class="form-control" placeholder="Email" email>
+                <div *ngIf="email.touched" class="text-danger">
+                    <div *ngIf="email.errors?.['required']">Email Required</div>
+                    <div *ngIf="email.errors?.['email']">Invalid Email</div>
+                </div>
+            </div>
+             <!--Image Input-->
+            <div class="mt-4">
+                <label class="form-label">Image<sup>*</sup></label>
+                <input type="file" required accept="image/x-png, image/gif, image/jpeg" name="avatar" ngModel #avatar="ngModel" class="form-control">
+                <div *ngIf="avatar.touched" class="text-danger">
+                    <div *ngIf="avatar.errors?.['required']">Image Required</div>
+                </div>
+            </div>
+             <!--Form Submit Button-->
+            <div class="mt-4 mb-4">
+                <button [disabled]="frmRegister.invalid" class="btn btn-success form-control">Add User</button>
+            </div>
+        </div>
+    </form>
+</div>
